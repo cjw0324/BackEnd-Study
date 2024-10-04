@@ -134,3 +134,90 @@ public void render(HttpServletRequest request, HttpServletResponse response) thr
 ## V3
 
 ![image.png](MVC%20Framework%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011529d746aff805c88a6fc67dc0c7e83/image%202.png)
+
+- 서블릿 종속성 제거
+- 뷰 이름 중복 제거
+
+- ModelView
+    - model은 단순히 map으로 되어 있으므로 컨트롤러
+    에서 뷰에 필요한 데이터를 key, value로 넣어주면 된다.
+- ControllerV3 interface
+    - 컨트롤러는 서블릿 기술을 전혀 사용하지 않는다. 따라서 구현이 매우 단순해지고, 테스트 코드 작성시 테스트 하기
+    쉽다.
+    - HttpServletRequest가 제공하는 파라미터는 프론트 컨트롤러가 paramMap에 담아서 호출해주면 된다.
+    응답 결과로 뷰 이름과 뷰에 전달할 Model 데이터를 포함하는 ModelView 객체를 반환하면 된다.
+- **MemberFormControllerV3 - 회원 등록 폼**
+    - ModelView`를 생성할 때`new-form 이라는 view의 논리적인 이름을 지정한다. 실제 물리적인 이름은 프론트 컨트 롤러에서 처리한다.
+- viewResolver()
+    - 논리 뷰 이름: members
+    - 물리 뷰 경로: /WEB-INF/views/members.jsp
+- view.render(mv.getModel(), request, response)
+    - 뷰 객체를 통해서 HTML 화면을 렌더링 한다.
+    - 뷰 객체의 render()는 모델 정보도 함께 받는다.
+    - JSP는 request.getAttribute() 로 데이터를 조회하기 때문에, 모델의 데이터를 꺼내 request.setAttribute() 로 담아둔다.
+    - JSP로 포워드 해서 JSP를 렌더링 한다.
+- MyView
+    
+    ```java
+    public void render(Map<String, Object> model, HttpServletRequest request,
+     HttpServletResponse response) throws ServletException, IOException {
+             modelToRequestAttribute(model, request);
+             RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+             dispatcher.forward(request, response);
+    }
+    ```
+    
+
+### 실행 순서대로 주절주절…
+
+http 요청 → FrontControllerServletV3 
+
+이제는 controller들이 HttpServletRequest, Response를 사용하지 않을 것이다. 그렇다면, 무엇을 어떻게 controller들에 넘길것인가?
+
+→ request에서 requestURI를 따로 땐다
+
+그리고 controllerMap에서 get(requestURI)로 요청에 맞는 원하는 controller를 생성한다. 이때 ControllerV3 인터페이스로 생성.
+
+그러면 ControllerV3는 ModelView를 반환하는 process 메서드가 있고, 입력은 Map<String, String> 이라는 paramMap 을 받는다.
+
+→ 그렇다면 ModelView는 무엇이길래 controller에서 반환하는가?
+
+→ ModelView에는 viewName과 Map<String, Object> 라는 model 이 있다.
+
+→ 다시 요청을 받았던 FrontControllerServletV3에서 paramMap에 createParamMap() 메서드를 사용하여 request로 받은 모든 paramName과 parameter들을 Map<String, String> 으로 넘긴다.
+
+→ 처음에 
+`/front-controller/v3/members/new-form`
+
+요청 이라면, body에 뭐가 없다~ 그리고 controller.process를 실행한다.
+
+→ 해당 controller의 비즈니스 로직이 실행된다. 이후  “new-form”이 담긴 ModelView를 반환하여 FrontControllerServletV3에서 이를 반환 받는다.
+
+→ viewResoolver를 통해 jsp파일의 절대경로를 알아내고, myView.render를 통해 렌더링한다.
+
+→ 이때 modelView.getModel()을 함께 넘기는데, hashmap 으로 된 model 을 넘기는데, save가 실행되었다면, member를. list가 실행된다면 member list 인 members를 render에 보낸다.
+
+→ MyView 의 `render*(*Map*<*String, Object*>* model, HttpServletRequest request, HttpServletResponse response*)`* 는 model 을 풀어해치기 위해 modelToRequestAttribute 메서드를 사용한다. 이는 model의 key, value 값들을 request 저장소에 각각 저장한다.
+
+→ 그리고 `RequestDispatcher dispatcher = request.getRequestDispatcher*(*viewPath*)*;`  와
+`dispatcher.forward*(*request, response*)*;` 를 사용하여 viewPath 에 맞는 jsp 로 포워딩 시킨다.
+
+→ 그러면 해당 JSP가 렌더링 된다.
+
+이후 다른 요청으로,
+
+→ 요청 url 이 `/front-controller/v3/members/save` 라면
+
+→ MemberSaveControllerV3 가 실행되고, new-form.jsp로 받은 username=””, age=”” 가  paramMap에 매핑되고
+
+→ 이 값들을 controller.process(paramMap)에 넘겨 controller를 실행한다.
+
+→ save controller 가 저장 비즈니스 로직을 실행 한 후, 
+
+ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이름으로 생성한다. + ModelView 객체의 model에 방금 저장 한 member 데이터를 담아 반환한다.
+
+→ FrontControllerV3는 논리이름을 물리 저장 위치로 바꾸고, JSP의 물리 이름 이 저장된 객체의 render 를 실행한다.
+
+이때 controller 실행 후 반환 받은 modelView 객체의 model이 Controller가 전달하고자 했던 데이터이기에 이를 함께 포함하여 render 메서드가 실행된다.
+
+→ MyView 의 render() 에서 request 저장소에 model 데이터를 저장하고, 이를 해당 viewPath의 JSP에 포워딩 한다.
