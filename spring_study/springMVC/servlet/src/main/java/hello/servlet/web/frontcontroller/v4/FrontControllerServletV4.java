@@ -1,54 +1,50 @@
-package hello.servlet.web.frontcontroller.v3;
+package hello.servlet.web.frontcontroller.v4;
 
 
 import hello.servlet.web.frontcontroller.ModelView;
 import hello.servlet.web.frontcontroller.MyView;
-
-import hello.servlet.web.frontcontroller.v3.controller.MemberFormControllerV3;
-import hello.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
-import hello.servlet.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import hello.servlet.web.frontcontroller.v4.controller.MemberFormControllerV4;
+import hello.servlet.web.frontcontroller.v4.controller.MemberListControllerV4;
+import hello.servlet.web.frontcontroller.v4.controller.MemberSaveControllerV4;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name = "frontControllerServletV3", urlPatterns = "/front-controller/v3/*")
-public class FrontControllerServletV3 extends HttpServlet {
-    private Map<String, ControllerV3> controllerMap = new HashMap<>();
+@WebServlet(name = "frontControllerServletV4", urlPatterns = "/front-controller/v4/*")
+public class FrontControllerServletV4 extends HttpServlet {
+    private Map<String, ControllerV4> controllerMap = new HashMap<>();
 
-    public FrontControllerServletV3() {
-        controllerMap.put("/front-controller/v3/members/new-form", new MemberFormControllerV3());
-        controllerMap.put("/front-controller/v3/members/save", new MemberSaveControllerV3());
-        controllerMap.put("/front-controller/v3/members", new MemberListControllerV3());
+    public FrontControllerServletV4() {
+        controllerMap.put("/front-controller/v4/members/new-form", new MemberFormControllerV4());
+        controllerMap.put("/front-controller/v4/members/save", new MemberSaveControllerV4());
+        controllerMap.put("/front-controller/v4/members", new MemberListControllerV4());
     }
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("FrontControllerServletV3.service");
+        System.out.println("FrontControllerServletV4.service");
 
         String requestURI = request.getRequestURI();
-        ControllerV3 controller = controllerMap.get(requestURI);
+        ControllerV4 controller = controllerMap.get(requestURI);
         if (controller == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
-        //paramMap을 넘겨줘야 함
+        //paramMap과 model -> 2개를 넘겨야 함.
         Map<String, String> paramMap = createParamMap(request);
-
-        ModelView modelView = controller.process(paramMap);
+        Map<String, Object> model = new HashMap<>(); //v4 추가
+        String viewName = controller.process(paramMap, model);
         // modelView.getViewName() -> 논리이름 new-form 이렇게만 얻을 수 있음.
-
-        String viewName = modelView.getViewName();
         MyView myView = viewResolver(viewName);
-        myView.render(modelView.getModel(),request, response);
 
+        myView.render(model,request, response);
     }
 
     private static MyView viewResolver(String viewName) {
@@ -56,7 +52,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         return myView;
     }
 
-    private Map<String, String> createParamMap(HttpServletRequest request) {
+    private static Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName)));
