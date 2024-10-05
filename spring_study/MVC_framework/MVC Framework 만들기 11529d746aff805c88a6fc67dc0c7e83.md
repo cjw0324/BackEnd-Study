@@ -221,3 +221,53 @@ ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이�
 이때 controller 실행 후 반환 받은 modelView 객체의 model이 Controller가 전달하고자 했던 데이터이기에 이를 함께 포함하여 render 메서드가 실행된다.
 
 → MyView 의 render() 에서 request 저장소에 model 데이터를 저장하고, 이를 해당 viewPath의 JSP에 포워딩 한다.
+
+## V4 - 단순하고 실용적인 컨트롤러
+
+- V3 구조와 거의 동일하다.
+- 하지만 컨트롤러는 ModelView를 반환하지 않고 ViewName만 반환한다.
+    
+    ControllerV4
+    `String process(Map<String, String> paramMap, Map<String, Object> model);`
+    v4에서는 controller들은 process를 실행하고 return을 string type, 그리고 매개변수로 paramMap, model 을 받는다.
+    
+
+![image.png](MVC%20Framework%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011529d746aff805c88a6fc67dc0c7e83/image%203.png)
+
+## V5 - 어댑터 개념 추가
+
+어댑터? 인터페이스가 구조적으로 strict하다.
+
+여러 controller 들을 사용할 수 있도록 한다.
+
+어떤 controller 들을 선택할 수 있도록 한다.
+
+![image.png](MVC%20Framework%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011529d746aff805c88a6fc67dc0c7e83/image%204.png)
+
+프론트 컨트롤러가 그동안은 바로 컨트롤러를 호출했다.
+
+하지만 이제는 핸들러 어댑터를 통해 핸들러 = 컨트롤러를 호출한다.
+
+### 실행 순서
+
+- 프론트 컨트롤러가 요청을 받으면, 핸들러 매핑 정보를 통해 핸들러를 조회하고, 해당 핸들러를 처리할 수 있는지 핸들러 어댑터 목록을 통해 어댑터를 조회 한다
+    - → MyHandlerAdaper - boolean supports(Object handler)
+    - `ModelView handle*(*HttpServletRequest request, HttpServletResponse response, Object handler*)* throws IOException, ServletException;` → 어댑터는 실제 컨트롤러를 호출하고, 그 결과로 ModelView를 반환해야 한다.
+
+→ 정리
+
+1. [http://localhost:8080/front-controller/v5/v3/members/new-form](http://localhost:8080/front-controller/v5/v3/members/new-form)
+
+요청이 온다 → FrontControllerServletV5 요청 받음.
+
+1. getHandler 에서 Map의 키가 “/front-controller/v5/v3/members/new-form” 인 새로운 객체를 반환받는다 → **handler = MemberFormControllerV3**
+2. getHandlerAdapter(handler) 를 통해 handler가 handlerAdapters 에 등록된 Adapter 인지 확인하여 처리 할 수 있다면, 처리할 수 있는 MyHandlerAdapter 를 구현한 구현 객체를 return 한다. 즉 V3 를 처리할 수 있는 HandlerAdapter이다.
+3. **MyHandlerAdapter adapter =  ControllerV3HandlerAdapter**  가 된다.
+4. ControllerV3HandlerAdapter 에서 ControllerV3 객체를 생성할 때, handler는 MemberFormControllerV3 이기 때문에 해당 컨트롤러 객체를 생성하고,
+5. ControllerV3HandlerAdapter 의 handle(request, response, handler) 에서는 받은 Object type의 handler를 ControllerV3로 타입 캐스팅 해주고.
+6. createParamMap 을 통해 request의 parameter들을 paramMap에 등록한다.
+7. 그리고 해당 controller (MemberFormControllerV3) 의 process 를 실행하고 이때 paramMap을 넘기고 반환으로 ModelView 객체를 받는다. 그리고 이를 return 한다.
+8. 다시 FrontControllerServletV5 에 돌아와서 ModelView 를 반환 받은 
+`ModelView mv = adapter.handle*(*request, response, handler*)*;`   mv를 통해 viewName을 알고, 해당 viewName을 viewResolver() 를 통해 JSP 의 물리 위치를 만들어 낸다.
+9. 그리고 MyView view 객체를 생성하고 이 view 객체를 render한다.
+10. 그렇다면 해당 jsp로 MyView - render 는 포워딩 한다.
