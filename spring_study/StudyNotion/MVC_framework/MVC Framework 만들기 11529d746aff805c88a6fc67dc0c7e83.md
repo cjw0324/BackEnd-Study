@@ -271,3 +271,102 @@ ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이�
 `ModelView mv = adapter.handle*(*request, response, handler*)*;`   mv를 통해 viewName을 알고, 해당 viewName을 viewResolver() 를 통해 JSP 의 물리 위치를 만들어 낸다.
 9. 그리고 MyView view 객체를 생성하고 이 view 객체를 render한다.
 10. 그렇다면 해당 jsp로 MyView - render 는 포워딩 한다.
+
+## 역할과 구현이 분리가 되어야 한다.
+
+- 인터페이스 기반으로 구현하고 필요한 구현체를 꽂아 넣으면 된다.
+- OCP 를 지킬 수 있게 된다.
+- Spring MVC의 핵심 구조를 파악하는데 필요한 부분들을 직접 구현 해 봄.
+- Spring MVC의 핵심 : HandlerAdapter
+
+# Spring MVC
+
+![image.png](MVC%20Framework%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011529d746aff805c88a6fc67dc0c7e83/image%205.png)
+
+**직접 만든 프레임워크 스프링 MVC 비교**
+
+- FrontController → DispatcherServlet
+- handlerMappingMap → HandlerMapping
+- MyHandlerAdapter → HandlerAdapter
+- ModelView → ModelAndView
+- viewResolver → ViewResolver
+- MyView → View
+
+- ***HandlerMapping***
+
+```
+ 0 순위 : RequestMappingHandlerMapping
+  -> 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
+
+ 1 순위 : BeanNameUrlHandlerMapping 
+	-> 스프링 빈의 이름으로 핸들러를 찾는다.
+
+```
+
+- ***HandlerAdapter***
+
+```
+0 순위 : RequestMappingHandlerAdapter
+ -> 애노테이션 기반의 컨트롤러인 @RequestMapping에서 사용
+1 순위 : HttpRequestHandlerAdapter
+ -> HttpRequestHandler 처리
+2 순위 : SimpleControllerHandlerAdapter
+ -> Controller 인터페이스(애노테이션X, 과거에 사용) 처리
+```
+
+## 핸들러 매핑과 핸들러 어댑터
+
+### 실제 스프링이 동작하는 과정 예시.
+
+- MyHttpRequestHandler
+
+```java
+@Component("/springmvc/request-handler")
+public class MyHttpRequestHandler implements HttpRequestHandler {
+
+    @Override
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("MyHttpRequestHandler.handleRequest");
+    }
+}
+```
+
+- OldController
+
+```java
+@Component("/springmvc/old-controller") //spring bean 이름이 "/springmvc/old-controller" 라고 등록 함.
+public class OldController implements Controller {
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("OldController.handleRequest");
+        return null;
+    }
+}
+```
+
+1. MyHttpRequestHandler
+    - url = /springmvc/request-handler
+    
+    **실행순서**
+    
+    - 핸들러 매핑으로 핸들러 조회
+        - HandlerMapping 을 해야하고, 2순위인 빈이름으로 핸들러를 찾는 BeanNameUrlHandlerMapping 을 통해 → 핸들러인 MyHttpRequestHandler를 반환한다.
+    - 핸들러 어댑터 조회
+        - HandlerAdapter의 supports()를 순서대로 조회한다.
+        - 1순위인 HttpRequestHandlerAdapter 가 선택 된다.
+    - 핸들러 어댑터 실행
+        - DispatcherServlet이 조회한 HttpRequestHandlerAdapter를 실행하며 핸들러도 함께 넘겨준다.
+        - 즉, HttpRequestHandlerAdapter인 핸들러 어댑터는 핸들러인 MyHttpRequestHandler를 냉부에서 실행하고 그 결과를 반환한다.
+2. OldController
+    - url = "/springmvc/old-controller"
+    
+    **실행순서**
+    
+    - 핸들러 매핑으로 핸들러 조회
+        - HandlerMapping 을 순서대로 실행한다.
+        - BeanNameUrlHanderMapping사용하여 스프링 빈 이름으로 핸들러를 찾고, 이 결과로 OldController가 반환된다.
+    - 핸들러 어댑터 조회
+        - HandlerAdapter 의 supports()를 순서대로 호출한다.
+        - 2순위. Controller 인터페이스를 처리할 수 있는 SimpleControllerHandlerAdapter를 찾아낸다.
+    - 핸들러 어댑터 실행
+        - 찾아낸 handler adapter인 SimpleControllerHandlerAdapter를 실행하며, 핸들러인 OldController 정보를 함께 넘겨 OldController를 내부에서 실행하고 그 결과를 반환한다.
