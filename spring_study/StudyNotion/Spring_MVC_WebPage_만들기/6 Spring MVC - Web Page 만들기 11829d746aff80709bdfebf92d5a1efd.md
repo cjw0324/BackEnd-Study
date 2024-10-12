@@ -15,7 +15,7 @@
 
 ### 서비스 제공 흐름
 
-![image.png](6%20Spring%20MVC%20-%20Web%20Page%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011829d746aff80709bdfebf92d5a1efd/image.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Spring_MVC_WebPage_%EB%A7%8C%EB%93%A4%EA%B8%B0/6%20Spring%20MVC%20-%20Web%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011829d746aff80709bdfebf92d5a1efd/image.png)
 
 ---
 
