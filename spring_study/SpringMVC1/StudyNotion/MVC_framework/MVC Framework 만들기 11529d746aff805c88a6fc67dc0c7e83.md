@@ -22,7 +22,7 @@
 
 ## 프론트 컨트롤러 도입 - Version 1
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image.png)
 
 ```java
 /frontcontroller/v1 //directory
@@ -75,7 +75,7 @@ public class FrontControllerServletV1 extends HttpServlet {
     - 중복되는 내용은 View를 위한 부분.
 - 따라서 별도로 뷰를 처리하는 객체를 만들자.
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%201.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%201.png)
 
 - Controller 가 이제는 직접 JSP로 포워드 하지 않고, MyView를 반환하고, MyView가 JSP를 포워딩 한다.
 - MyView는 viewPath를 받고, 해당 viewPath로 JSP 포워딩 시켜 랜더링한다 → 이를 render method로 분리.
@@ -133,7 +133,7 @@ public void render(HttpServletRequest request, HttpServletResponse response) thr
 
 ## V3
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%202.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%202.png)
 
 - 서블릿 종속성 제거
 - 뷰 이름 중복 제거
@@ -232,7 +232,7 @@ ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이�
     v4에서는 controller들은 process를 실행하고 return을 string type, 그리고 매개변수로 paramMap, model 을 받는다.
     
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%203.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%203.png)
 
 ## V5 - 어댑터 개념 추가
 
@@ -242,7 +242,7 @@ ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이�
 
 어떤 controller 들을 선택할 수 있도록 한다.
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%204.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%204.png)
 
 프론트 컨트롤러가 그동안은 바로 컨트롤러를 호출했다.
 
@@ -281,7 +281,7 @@ ModelView 객체를 생성하고, 이때 생성자를 통해 jsp의 논리 이�
 
 # Spring MVC
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%205.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%205.png)
 
 **직접 만든 프레임워크 스프링 MVC 비교**
 
