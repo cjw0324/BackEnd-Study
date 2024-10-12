@@ -3,7 +3,7 @@
 ### [Spring MVC 1 기본](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Spring_MVC_%EA%B8%B0%EC%B4%88/Spring_MVC_1.md)
 24.10.03 : WAS, MutliThread
 
-### [Servlet Study](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Servlet/Servlet.md)
+### [Servlet Study](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Servlet/2%20Servlet%2011429d746aff8055ab69d003d6cdf34f.md)
 24.10.03 : HTTP request, response with servlet
 
 ### [MVC pattern](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83.md)
