@@ -2,7 +2,7 @@
 
 # Spring MVC
 
-![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Spring_MVC_start/Spring%20MVC%20-%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0%2011729d746aff80d3a9b3f51d2ff91a53/image.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/Spring_MVC_%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/Spring%20MVC%20-%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0%2011729d746aff80d3a9b3f51d2ff91a53/image.png)
 
 **직접 만든 프레임워크 스프링 MVC 비교**
 
