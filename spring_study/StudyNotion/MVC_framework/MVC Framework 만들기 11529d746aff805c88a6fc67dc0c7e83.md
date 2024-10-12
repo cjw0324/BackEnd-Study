@@ -22,7 +22,7 @@
 
 ## 프론트 컨트롤러 도입 - Version 1
 
-![image.png](MVC%20Framework%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%2011529d746aff805c88a6fc67dc0c7e83/image.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/MVC_framework/MVC%20Framework%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011529d746aff805c88a6fc67dc0c7e83/image%201.png)
 
 ```java
 /frontcontroller/v1 //directory
