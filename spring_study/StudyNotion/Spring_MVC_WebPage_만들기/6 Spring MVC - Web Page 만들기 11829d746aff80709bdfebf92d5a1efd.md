@@ -75,6 +75,7 @@
         }
     }
     ```
+    - 싱글톤 + ConcurrentHashMap + AtomicLong 사용하여 Thread safe 함을 지킴, 일관성을 유지함.
     
 
 ## 상품 목록 폼
