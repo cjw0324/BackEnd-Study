@@ -1,5 +1,10 @@
 # Spring_Study
 매일 기록하는 나의 Spring 공부
+
+---
+
+## Spring MVC 1편
+
 ### [Spring MVC 기초](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/Spring_MVC_%EA%B8%B0%EC%B4%88/Spring_MVC_1.md)
 24.10.03 : WAS, MutliThread
 
@@ -21,3 +26,8 @@
 ### [Spring MVC - Wep page 만들기](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/Spring_MVC_WebPage_%EB%A7%8C%EB%93%A4%EA%B8%B0/6%20Spring%20MVC%20-%20Web%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011829d746aff80709bdfebf92d5a1efd.md)
 24.10.10 : Wep page - add 요청 v1~v5
 24.10.12 : Wep page - PRG 순서 ~ end
+
+---
+
+## Spring MVC 2편
+
