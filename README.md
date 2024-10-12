@@ -18,6 +18,6 @@
 24.10.06 : SpringMVC new project
 24.10.08 : HTTP 요청, 응답 part
 
-### [Spring MVC - Wep page 만들기] (https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Spring_MVC_WebPage_%EB%A7%8C%EB%93%A4%EA%B8%B0/6%20Spring%20MVC%20-%20Web%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011829d746aff80709bdfebf92d5a1efd.md)
+### [Spring MVC - Wep page 만들기](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/StudyNotion/Spring_MVC_WebPage_%EB%A7%8C%EB%93%A4%EA%B8%B0/6%20Spring%20MVC%20-%20Web%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011829d746aff80709bdfebf92d5a1efd.md)
 24.10.10 : Wep page - add 요청 v1~v5
 24.10.12 : Wep page - PRG 순서 ~ end
