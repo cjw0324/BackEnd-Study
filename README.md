@@ -31,3 +31,5 @@
 
 ## Spring MVC 2편
 
+### [Thymeleaf - 기본기능](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/thymeleaf_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5/1%20%ED%83%80%EC%9E%84%EB%A6%AC%ED%94%84%20-%20%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5%2011d29d746aff8049956bda78b7d23e6c.md)
+24.10.14 : thymeleaf - 기본기능 (텍스트, 변수, 기본객체, URL링크, 리터럴, 연산, 반복, 조건, 주석, 블록, js인라인, 템플릿 조각, 템플릿 레이아웃)
