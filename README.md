@@ -21,6 +21,7 @@
 
 ### [Spring MVC - 기본기능](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/Spring_MVC_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5/5%20Spring%20MVC%20-%20%EA%B8%B0%EB%B3%B8%20%EA%B8%B0%EB%8A%A5%2011729d746aff80fbb074e34084b78704.md)
 24.10.06 : SpringMVC new project
+
 24.10.08 : HTTP 요청, 응답 part
 
 ### [Spring MVC - Wep page 만들기](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC1/StudyNotion/Spring_MVC_WebPage_%EB%A7%8C%EB%93%A4%EA%B8%B0/6%20Spring%20MVC%20-%20Web%20Page%20%EB%A7%8C%EB%93%A4%EA%B8%B0%2011829d746aff80709bdfebf92d5a1efd.md)
