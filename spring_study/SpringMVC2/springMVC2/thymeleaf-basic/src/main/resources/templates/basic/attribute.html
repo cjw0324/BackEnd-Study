@@ -15,9 +15,11 @@
 - th:classappend = <input type="text" class="text" th:classappend="large" /><br/>
 
 <h1>checked 처리</h1>
+- checked model attribute = false  <input type="checkbox" name="active" th:checked="${checkBoolean}"/><br/>
 - checked o <input type="checkbox" name="active" th:checked="true" /><br/>
 - checked x <input type="checkbox" name="active" th:checked="false" /><br/>
 - checked=false <input type="checkbox" name="active" checked="false" /><br/>
+- none checked <input type="checkbox" name="active"/><br/>
 
 </body>
 </html>

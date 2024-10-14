@@ -18,6 +18,7 @@
         <td>
             <span th:text="${user.age}">0</span>
             <span th:text="'미성년자'" th:if="${user.age lt 20}"></span>
+            <span th:text="'미성년자'" th:if="${user.age < 20}"></span>
             <span th:text="'미성년자'" th:unless="${user.age ge 20}"></span>
         </td>
     </tr>
