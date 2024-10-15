@@ -39,5 +39,5 @@
 ### [2. Thymeleaf - 스프링통합과 폼](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/thymeleaf_%EC%8A%A4%ED%94%84%EB%A7%81%ED%86%B5%ED%95%A9%EA%B3%BC%ED%8F%BC/2%20%ED%83%80%EC%9E%84%EB%A6%AC%ED%94%84%20-%20%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%86%B5%ED%95%A9%EA%B3%BC%20%ED%8F%BC%2011d29d746aff8064aa88c51c429a6529.md)
 24.10.15 : thymeleaf - 텍스트 입력 등록 폼, 체크박스, 라디오버튼, 셀렉트 박스 추가
 
-### [3. 메시지, 국제화](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EB%A9%94%EC%8B%9C%EC%A7%80%EA%B5%AD%EC%A0%9C%ED%99%94/369c24d9-4492-4ba4-ae93-0314fda4898d_Export-18c2ee90-52a3-4642-b223-a13b7d972421/3%20%EB%A9%94%EC%8B%9C%EC%A7%80%2C%20%EA%B5%AD%EC%A0%9C%ED%99%94%2011d29d746aff802a8ea0c7d7c432b024.md)
+### [3. 메시지, 국제화](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EB%A9%94%EC%8B%9C%EC%A7%80%EA%B5%AD%EC%A0%9C%ED%99%94/3%20%EB%A9%94%EC%8B%9C%EC%A7%80%2C%20%EA%B5%AD%EC%A0%9C%ED%99%94%2011d29d746aff802a8ea0c7d7c432b024.md)
 24.10.15 : 메시지, 국제화
