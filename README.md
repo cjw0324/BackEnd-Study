@@ -35,3 +35,6 @@
 
 ### [Thymeleaf - 기본기능](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/thymeleaf_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5/1%20%ED%83%80%EC%9E%84%EB%A6%AC%ED%94%84%20-%20%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5%2011d29d746aff8049956bda78b7d23e6c.md)
 24.10.14 : thymeleaf - 기본기능 (텍스트, 변수, 기본객체, URL링크, 리터럴, 연산, 반복, 조건, 주석, 블록, js인라인, 템플릿 조각, 템플릿 레이아웃)
+
+### [Thymeleaf - 스프링통합과 폼](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/thymeleaf_%EC%8A%A4%ED%94%84%EB%A7%81%ED%86%B5%ED%95%A9%EA%B3%BC%ED%8F%BC/2%20%ED%83%80%EC%9E%84%EB%A6%AC%ED%94%84%20-%20%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%86%B5%ED%95%A9%EA%B3%BC%20%ED%8F%BC%2011d29d746aff8064aa88c51c429a6529.md)
+24.10.15 : thymeleaf - 텍스트 입력 등록 폼, 체크박스, 라디오버튼, 셀렉트 박스 추가
