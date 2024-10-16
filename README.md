@@ -41,3 +41,6 @@
 
 ### [3. 메시지, 국제화](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EB%A9%94%EC%8B%9C%EC%A7%80%EA%B5%AD%EC%A0%9C%ED%99%94/3%20%EB%A9%94%EC%8B%9C%EC%A7%80%2C%20%EA%B5%AD%EC%A0%9C%ED%99%94%2011d29d746aff802a8ea0c7d7c432b024.md)
 24.10.15 : 메시지, 국제화
+
+### [4. 검증1 - Validation](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D1_Validation/4%20%EA%B2%80%EC%A6%9D1%20-%20Validation%2011d29d746aff8028b27fe8e76a4bc371.md)
+24.10.16 : 검증 v1 ~ v6, 메시지 처리, @Validated
