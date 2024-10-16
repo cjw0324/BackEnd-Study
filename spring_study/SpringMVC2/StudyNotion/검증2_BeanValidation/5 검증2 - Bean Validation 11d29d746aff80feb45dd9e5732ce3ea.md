@@ -142,7 +142,7 @@ public class ValidationItemControllerV3 {
 
 **실행 결과**
 
-![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image.png)
 
 ***잘 된다! 왜??***
 
@@ -527,9 +527,9 @@ public class ValidationItemApiController {
 
 - **성공 요청 보낼 경우**
 
-![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%201.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%201.png)
 
-![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%202.png)
+![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%202.png)
 
 - “API 컨트롤러 호출” 이라는 로그도 잘 찍힌 것을 알 수 있다.
 
@@ -539,17 +539,17 @@ public class ValidationItemApiController {
 
 1. 검증 오류 요청 : JSON을 객체로 생성하는데에 성공 후 검증에서 실패하는 경우.
     
-    ![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%203.png)
+    ![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%203.png)
     
-    ![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%204.png)
+    ![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%204.png)
     
     →“API 컨트롤러 호출” 로그가 찍혔다. 컨트롤러가 실행 되고 검증에서 실패한 Case 이다.
     
 2. 실패 요청 : JSON을 객체로 생성하는 것 자체가 실패하는 경우.
     
-    ![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%205.png)
+    ![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%205.png)
     
-    ![image.png](5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%206.png)
+    ![image.png](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea/image%206.png)
     
     → “API 컨트롤러 호출” 로그가 없다.
     
