@@ -44,3 +44,6 @@
 
 ### [4. 검증1 - Validation](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D1_Validation/4%20%EA%B2%80%EC%A6%9D1%20-%20Validation%2011d29d746aff8028b27fe8e76a4bc371.md)
 24.10.16 : 검증 v1 ~ v6, 메시지 처리, @Validated
+
+### [5. 검증2 - Bean Validation](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea.md)
+24.10.16 : Bean Validation, error code, object error, groups, form 전송 객체 분리, HTTP API - @RequestBody에 적용하기
