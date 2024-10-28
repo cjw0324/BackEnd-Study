@@ -15,6 +15,7 @@ public class MemberRepository {
     public Member save(Member member) {
         member.setId(++sequence);
         store.put(member.getId(), member);
+        log.info("save : id : {}, userId : {}, password : {}, name : {}", member.getId(), member.getLoginId(), member.getPassword(), member.getName() );
         return member;
     }
 
