@@ -47,3 +47,6 @@
 
 ### [5. 검증2 - Bean Validation](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EA%B2%80%EC%A6%9D2_BeanValidation/5%20%EA%B2%80%EC%A6%9D2%20-%20Bean%20Validation%2011d29d746aff80feb45dd9e5732ce3ea.md)
 24.10.16 : Bean Validation, error code, object error, groups, form 전송 객체 분리, HTTP API - @RequestBody에 적용하기
+
+### [6. 로그인1 - Cookie, Session](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%B2%98%EB%A6%AC_%EC%BF%A0%ED%82%A4_%EC%84%B8%EC%85%98_1/6%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%EC%B2%98%EB%A6%AC1%20-%20%EC%BF%A0%ED%82%A4%2C%20%EC%84%B8%EC%85%98%2011d29d746aff8071880be1f35fb20cd5.md)
+24.10.28 : Login - Cookie, Session
