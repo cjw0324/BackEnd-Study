@@ -29,6 +29,7 @@ public class LogFilter implements Filter {
         } finally {
             log.info("RESPONSE [{}][{}][{}]", uuid, request.getDispatcherType(),
                     requestURI);
+            log.info("legend dopy");
         }
     }
     @Override
