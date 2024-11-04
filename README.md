@@ -58,7 +58,10 @@
 24.10.31 : Exception, Error Page - Servlet & Spring Boot
 
 ### [9. API 예외 처리](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/API_%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/9%20API%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC%2011d29d746aff80a0ad98cd4ea759a997.md)
-24.11.04 : API Exception : HandlerExceptionResolver, @ExceptionHandler, @ControllerAdvice
+24.11.02 : API Exception : HandlerExceptionResolver, @ExceptionHandler, @ControllerAdvice
 
 ### [10. 스프링 타입 Converter](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EC%BB%A8%EB%B2%84%ED%84%B0/10%20%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%83%80%EC%9E%85%20%EC%BB%A8%EB%B2%84%ED%84%B0%2011d29d746aff80d6956ed65ff73de942.md)
-24.11.04 : Converter, Formatter, Annotaion 으로 Formatter 사용하기
+24.11.03 : Converter, Formatter, Annotaion 으로 Formatter 사용하기
+
+### [11. 파일 업로드](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C/11%20%ED%8C%8C%EC%9D%BC%20%EC%97%85%EB%A1%9C%EB%93%9C%2011d29d746aff801da9d6cf2980e4423e.md)
+24.11.04 : FileUpload - Spring MultipartFile - upload,download 구현
