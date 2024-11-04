@@ -56,3 +56,6 @@
 
 ### [8. 예외 처리, 오류 페이지](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC_%EC%98%A4%EB%A5%98%ED%8E%98%EC%9D%B4%EC%A7%80/8%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC%EC%99%80%20%EC%98%A4%EB%A5%98%20%ED%8E%98%EC%9D%B4%EC%A7%80.md)
 24.10.31 : Exception, Error Page - Servlet & Spring Boot
+
+### [9. API 예외 처리](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/API_%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/9%20API%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC%2011d29d746aff80a0ad98cd4ea759a997.md)
+24.11.04 : API Exception : HandlerExceptionResolver, @ExceptionHandler, @ControllerAdvice
