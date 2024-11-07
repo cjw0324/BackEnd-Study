@@ -102,7 +102,7 @@ public class LoginController {
             bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다");
             return "login/loginForm";
         }
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(); //세션이 있으면 있는 세션을 반환하고, 없으면 신규 세션을 생성한다.
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
         return "redirect:/";
     }
