@@ -81,3 +81,6 @@ Spring 길라잡이
 
 ### [4. 스프링과 문제 해결](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0_%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20-%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%2013529d746aff80c8ba87ce02df8ac8e9.md)
 24.11.07
+
+### [5. 자바 예외 이해](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%EC%9E%90%EB%B0%94%EC%98%88%EC%99%B8%EC%9D%B4%ED%95%B4/%EC%9E%90%EB%B0%94%20%EC%98%88%EC%99%B8%20%EC%9D%B4%ED%95%B4%2013529d746aff8038add0cb8d74fdd1d2.md)
+24.11.07
