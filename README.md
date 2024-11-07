@@ -87,3 +87,17 @@ Spring 길라잡이
 
 ### [6. 스프링과 문제 해결 - 예외처리, 반복](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0_%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC%EB%B0%98%EB%B3%B5/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC%2C%20%EB%B0%98%EB%B3%B5%2013529d746aff80e4b33ed63656bbd017.md)
 24.11.07
+
+---
+
+## Spring DB 2편
+
+---
+# Todo!
+## 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발
+## 자바 ORM 표준 JPA 프로그래밍 - 기본편
+## 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화
+## 실전! 스프링 데이터 JPA
+## 실전! Querydsl
+## 스프링 부트 - 핵심 원리와 활용
+## 스프링 핵심 원리 - 고급편
