@@ -162,6 +162,8 @@ public class MemberRepositoryV2 {
             log.info("delete memberId={}", memberId);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            close(connection, preparedStatement, null);
         }
     }
 
