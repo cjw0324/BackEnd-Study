@@ -65,3 +65,19 @@ Spring 길라잡이
 
 ### [11. 파일 업로드](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringMVC2/StudyNotion/%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C/11%20%ED%8C%8C%EC%9D%BC%20%EC%97%85%EB%A1%9C%EB%93%9C%2011d29d746aff801da9d6cf2980e4423e.md)
 24.11.04 : FileUpload - Spring MultipartFile - upload,download 구현
+
+---
+
+## Spring DB 1편
+
+### [1. JDBC의 이해](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/JDBC%EC%9D%98%EC%9D%B4%ED%95%B4/1%20JDBC%EC%9D%98%20%EC%9D%B4%ED%95%B4%2013529d746aff80938dd4c97c6785d55c.md)
+24.11.05
+
+### [2. 커넥션 풀과 데이터 소스 이해](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%EC%BB%A4%EB%84%A5%EC%85%98%ED%92%80%EA%B3%BC%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%86%8C%EC%8A%A4%EC%9D%B4%ED%95%B4/%EC%BB%A4%EB%84%A5%EC%85%98%20%ED%92%80%EA%B3%BC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%86%8C%EC%8A%A4%20%EC%9D%B4%ED%95%B4%2013529d746aff80a2af3cd9c6ce2ed370.md)
+24.11.05
+
+### [3. 트랜잭션 이해](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%B4%ED%95%B4/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20%EC%9D%B4%ED%95%B4%2013529d746aff8009a10fce1394220a0f.md)
+24.11.06
+
+### [4. 스프링과 문제 해결](https://github.com/cjw0324/Spring_Study/blob/main/spring_study/SpringDB1/StudyNotion/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0_%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20-%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%2013529d746aff80c8ba87ce02df8ac8e9.md)
+24.11.07
