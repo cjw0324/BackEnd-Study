@@ -1,17 +1,19 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.ItemRepository;
-import hello.itemservice.repository.memory.MemoryItemRepository;
+import hello.itemservice.repository.jpa.JpaItemRepositoryV2;
+import hello.itemservice.repository.jpa.SpringDataJpaItemRepository;
 import hello.itemservice.service.ItemService;
 import hello.itemservice.service.ItemServiceV1;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import javax.sql.DataSource;
 
 @Configuration
-public class MemoryConfig {
+@RequiredArgsConstructor
+public class SpringDataJpaConfig {
+
+    private final SpringDataJpaItemRepository springDataJpaItemRepository;
 
     @Bean
     public ItemService itemService() {
@@ -20,7 +22,6 @@ public class MemoryConfig {
 
     @Bean
     public ItemRepository itemRepository() {
-        return new MemoryItemRepository();
+        return new JpaItemRepositoryV2(springDataJpaItemRepository);
     }
-
 }

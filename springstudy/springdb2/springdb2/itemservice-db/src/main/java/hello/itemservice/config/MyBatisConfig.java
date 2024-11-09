@@ -1,17 +1,21 @@
 package hello.itemservice.config;
 
 import hello.itemservice.repository.ItemRepository;
-import hello.itemservice.repository.memory.MemoryItemRepository;
+import hello.itemservice.repository.mybatis.ItemMapper;
+import hello.itemservice.repository.mybatis.MyBatisItemRepository;
 import hello.itemservice.service.ItemService;
 import hello.itemservice.service.ItemServiceV1;
+import lombok.RequiredArgsConstructor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import javax.sql.DataSource;
 
 @Configuration
-public class MemoryConfig {
+@RequiredArgsConstructor
+//@MapperScan("hello.itemservice.repository.mybatis")
+public class MyBatisConfig {
+
+    private final ItemMapper itemMapper;
 
     @Bean
     public ItemService itemService() {
@@ -20,7 +24,7 @@ public class MemoryConfig {
 
     @Bean
     public ItemRepository itemRepository() {
-        return new MemoryItemRepository();
+        return new MyBatisItemRepository(itemMapper);
     }
 
 }
