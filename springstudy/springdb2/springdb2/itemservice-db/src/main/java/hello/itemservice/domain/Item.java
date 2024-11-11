@@ -13,7 +13,6 @@ public class Item {
 
     @Column(name = "item_name", length = 10)
     private String itemName;
-
     private Integer price;
     private Integer quantity;
 

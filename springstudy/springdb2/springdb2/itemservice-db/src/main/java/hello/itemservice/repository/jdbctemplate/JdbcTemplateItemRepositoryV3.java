@@ -4,7 +4,6 @@ import hello.itemservice.domain.Item;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -18,6 +17,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.util.StringUtils;
 
+import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -26,14 +26,18 @@ import java.util.Optional;
  * SimpleJdbcInsert
  */
 @Slf4j
-@RequiredArgsConstructor
 public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
 
     private final NamedParameterJdbcTemplate template;
-
     private final SimpleJdbcInsert jdbcInsert;
 
-
+    public JdbcTemplateItemRepositoryV3(DataSource dataSource) {
+        this.template = new NamedParameterJdbcTemplate(dataSource);
+        this.jdbcInsert = new SimpleJdbcInsert(dataSource)
+                .withTableName("item")
+                .usingGeneratedKeyColumns("id");
+//                .usingColumns("item_name", "price", "quantity"); //생략 가능
+    }
 
     @Override
     public Item save(Item item) {

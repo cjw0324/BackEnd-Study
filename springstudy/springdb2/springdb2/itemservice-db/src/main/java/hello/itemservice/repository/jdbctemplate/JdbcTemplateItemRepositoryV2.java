@@ -4,7 +4,6 @@ import hello.itemservice.domain.Item;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -36,14 +35,13 @@ import java.util.Optional;
  *
  */
 @Slf4j
-@RequiredArgsConstructor
 public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
 
     private final NamedParameterJdbcTemplate template;
 
-//    public JdbcTemplateItemRepositoryV2(DataSource dataSource) {
-//        this.template = new NamedParameterJdbcTemplate(dataSource);
-//    }
+    public JdbcTemplateItemRepositoryV2(DataSource dataSource) {
+        this.template = new NamedParameterJdbcTemplate(dataSource);
+    }
 
     @Override
     public Item save(Item item) {
