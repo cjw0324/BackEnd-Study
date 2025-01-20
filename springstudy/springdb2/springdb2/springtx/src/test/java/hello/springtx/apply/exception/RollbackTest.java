@@ -10,9 +10,6 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.management.RuntimeErrorException;
-import java.util.Calendar;
-
 import static hello.springtx.apply.exception.RollbackTest.RollbackService.*;
 import static org.assertj.core.api.Assertions.*;
 @Slf4j
